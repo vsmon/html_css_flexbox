@@ -6,6 +6,7 @@
 body{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 13px;
+    overflow-x: hidden;
 }
 header{
     height: 100px;
@@ -57,10 +58,6 @@ header{
     border-bottom: 5px solid #b28756;
     color: #CCC
 }
-
-
-
-
 .banner{
     height: calc(100vh - 100px);
     background-color: #333;
@@ -105,8 +102,8 @@ header{
     text-transform: uppercase;
     margin-top: 10px;
 }
-.banner a{
-    display: block;
+.button{
+    display: inline-block;
     background-color: #b28756;
     color: white;
     text-transform: uppercase;
@@ -118,22 +115,140 @@ header{
     border-radius: 20px;
 }
 .banner .sliders-pointers{
-    display: flex;
-    height: 20px;
     width: 100vw;
+    height: 20px;
     position: absolute;
-    margin-top: -210px;
+    margin-top: -50px !important; 
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.banner .pointer{
-    height: 15px;
+.banner .sliders-pointers .pointer{
     width: 15px;
+    height: 15px;
     border: 2px solid #b28756;
     border-radius: 8px;
+    margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;
 }
+
 .banner .pointer.active{
     background-color: #b28756;
+}
+.default{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.default .section-title, .default .section-desc{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.default .section-title{
+    font-size: 20px;
+    
+}
+.default .section-desc{
+    font-size: 12px;
+    color: #CCC;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.default .section-body{
+    max-width: 1140px;
+    margin:auto;
+}
+.default.light{
+    background-color: #f7f7f7;
+}
+.default.dark{
+    background-color: #000;
+}
+.default.light .section-title,
+.default.light .section-body{
+    color: #000;
+}
+.default.dark .section-title,
+.default.dark .section-body{
+    color: #FFF;
+}
+
+
+
+/* CSS de areas especificas */
+.section-aboutus{
+    display: flex;
+}
+.section-aboutus--left{
+    flex: 1;
+}
+.section-aboutus--left p{
+    font-size: 14px;
+    line-height: 25px;
+}
+.section-aboutus--right{
+    width: 520px;
+    text-align: center;
+}
+.section-aboutus--right img{
+    width: 480px;
+    box-shadow: 0px 5px 10px #333;
+}
+.section-services{
+    display: flex;
+}
+.section-service{
+    flex: 1;   
+    text-align: center;    
+    border-right: 1px solid #333;
+    padding: 15px;
+}
+.section-service:first-child{
+    border-left: 1px solid #333;
+}
+.section-service h4{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.section-service p{
+    margin-top: 10px;
+    color: #999;
+    font-size: 13px;
+}
+
+.section-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-projects--filters{
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 0px 20px;
+}
+.section-projects--filters ul,
+.section-projects--filters li{
+    list-style: none;
+}
+.section-projects--filters li{
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-left: 1px solid #CCC;
+    color: #555;
+    border-bottom: 3px solid #EEE;
+    cursor: pointer;
+}
+.section-projects--filters li:hover,
+.section-projects--filters li.active{
+    border-bottom: 3px solid #b28756;
+}
+
+.section-projects--filters li:first-child{
+    border-left: 0;
 }
